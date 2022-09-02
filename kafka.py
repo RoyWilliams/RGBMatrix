@@ -23,7 +23,7 @@ def get_kafka(array):
 
     nalert = 0
     print('kafka started')
-    while nalert < settings.maxalert:
+    while 1:
         msg = consumer.poll(timeout=10)
         if msg == None:
             print(now(), 'null')
