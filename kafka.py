@@ -5,7 +5,7 @@ import time
 from datetime import datetime
 
 consumer = None
-n = 32
+n = settings.npix
 delay = settings.kafka_delay
 
 def now():

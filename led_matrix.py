@@ -1,10 +1,11 @@
 from PIL import Image
 from PIL import ImageDraw
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
+import settings
 
 def init():
     options = RGBMatrixOptions()
-    options.rows = 32
+    options.rows = settings.npix
     options.chain_length = 1
     options.parallel = 1
     options.hardware_mapping = 'adafruit-hat'
@@ -12,7 +13,7 @@ def init():
     return matrix
 
 def show(a, matrix):
-    image = Image.new("RGB", (32, 32)) 
+    image = Image.new("RGB", (settings.npix, settings.npix)) 
     draw = ImageDraw.Draw(image) 
     for i in range(n):
         for j in range(n):

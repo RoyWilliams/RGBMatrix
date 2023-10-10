@@ -6,14 +6,18 @@ import numpy as np
 import lasair
 
 # The first is a matplotlib screen, the second for the real matriz
-#from screen import init, show
-from led_matrix import init, show
+if settings.RGBmatrix:
+    from led_matrix import init, show
+else:
+    from screen import init, show
 
 # The first is for mock kafka, the second for the real thing
-#import mockkafka as kafka
-import kafka
+if settings.realKafka:
+    import kafka
+else:
+    import mockkafka as kafka
 
-n = 32
+n = settings.npix
 L = lasair.state(n)
 
 def run_display(pass_shmarray):

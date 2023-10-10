@@ -1,7 +1,8 @@
 import time
 import random
+import settings
 
-n = 32
+n = settings.npix
 def init():
     return
 
@@ -12,7 +13,7 @@ def get_kafka(array):
         k = i*n+j
         array[k] += 1
         if random.random() < 0.1:
-            time.sleep(10)
+            time.sleep(2)
         else:
             time.sleep(0.01)
 
