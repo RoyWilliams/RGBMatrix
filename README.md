@@ -1,4 +1,8 @@
 ## Lasair data monitoring RGB matrix
+The simplest way to run the event display uses a compute monitor, and does not require installing hardware. Simply install the [OpenCV](https://pypi.org/project/opencv-python/) package, and in the `settings.py` file put `RGBmatrix = False`. Then `python3 master.py` on the command line and the display will come up.
+
+The instructions below are about the wall-mounted display, with `RGBmatrix = True`.
+
 This wall-mounted display shows the status of the Lasair data flow, and can be adapted for other purposes. Total cost is about $130. There is a 32x32 RGB matrix powered by a Raspberry Pi, and they can be mounted in a box-frame to make a wall-mounted display. There are two power cables, one a USB to power the RPi, the other a 5V supply for the matrix. The RPi needs to be on a wifi network, and the instructions below assume an external computer is on the same wifi. 
 
 Each alert that arrives has RA and Dec in the sky: RA is 0-360 left to right, and Dec is -25-90 bottom to top. The corresponding LED lights up, and fades gradually over about 10 minutes. Further, there is [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) that is triggered, so that rapid movement continues on the matrix even after the alerts stop.
